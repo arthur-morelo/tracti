@@ -38,7 +38,7 @@ const Sbms: React.FC<SbmsProps> = ({
   return (
     <a
       href={href}
-      className="inline-flex items-center text-blue-300 font-semibold text-lg hover:underline transition-colors" // Cor do texto azul-300 aqui
+      className="inline-flex items-center text-white font-semibold text-lg hover:underline transition-colors" // Cor do texto azul-300 aqui
       onClick={handleClick}
     >
       {text}

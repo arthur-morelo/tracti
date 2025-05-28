@@ -111,7 +111,7 @@ function Service() {
         </div>
 
         {/* Grid de Detalhes dos Serviços (Cartões) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-white w-full">
+        <div className="grid grid-cols-1 gap-8 text-white w-full">
           {serviceItemsData.map((service, index) => (
             <div
               key={service.id}
