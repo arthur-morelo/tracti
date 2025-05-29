@@ -3,6 +3,7 @@ import srvgd from "../assets/srvgd.jpg";
 import bck from "../assets/bgservice.jpg";
 import Sbms from "./Sbms";
 import img from "../assets/imgsrvc.jpg";
+import Entre from "./entctt"; // Importando o componente Entre (que você chamou de Arrow antes)
 
 // Removida a prop 'isDownload' dos objetos de serviço
 const serviceItemsData = [
@@ -15,6 +16,7 @@ const serviceItemsData = [
       "Inspeções técnicas com drones e tecnologias avançadas;",
     ],
     imageToShow: img,
+    additionalContentComponent: <Entre isWhite={true} />, // Passando a prop isWhite
   },
   {
     id: "suportemar",
@@ -23,6 +25,8 @@ const serviceItemsData = [
       "Fornecemos barcaças de acomodação offshore;",
       "AHTS; Sufers; PSVs; Cargo Barges, movimento de passageiros offshore;",
     ],
+    imageToShow: null, // Definir como null para serviços sem imagem
+    additionalContentComponent: null, // Definir como null para serviços sem componente
   },
   {
     id: "sustentabilidade",
@@ -32,6 +36,8 @@ const serviceItemsData = [
       "Redução de emissões de carbono e impacto ambiental;",
       "Gestão de proteção catódica e revestimentos",
     ],
+    imageToShow: null,
+    additionalContentComponent: null,
   },
   {
     id: "consultoria",
@@ -41,6 +47,8 @@ const serviceItemsData = [
       "Desenvolvimento de planos estratégicos personalizados;",
       "Consultoria em tecnologia e inovação;",
     ],
+    imageToShow: null,
+    additionalContentComponent: null,
   },
   {
     id: "construcao",
@@ -51,6 +59,8 @@ const serviceItemsData = [
       "Serviços de limpeza de tanques;",
       "Serviços de Fabricação metalomecânica - onshore e offshore.",
     ],
+    imageToShow: null,
+    additionalContentComponent: null,
   },
   {
     id: "suportemarinho",
@@ -60,6 +70,8 @@ const serviceItemsData = [
       "Serviços de dragagem e batimetria;",
       "Manutenção de infraestruturas portuárias.",
     ],
+    imageToShow: null,
+    additionalContentComponent: null,
   },
 ];
 
@@ -120,35 +132,59 @@ function Service() {
                           ${index > 0 ? "pt-6" : ""}
                           `}
             >
-              <div>
-                <h4 className="text-xl font-bold mb-4 uppercase">
-                  {service.title}
-                </h4>
-                {/* DESCRIÇÃO E IMAGEM VISÍVEIS APENAS SE expandedServiceId CORRESPONDER */}
-                {expandedServiceId === service.id && (
-                  <div className="mt-4">
+              {/* Título do Serviço */}
+              <h4 className="text-xl font-bold mb-4 uppercase">
+                {service.title}
+              </h4>
+
+              {/* Conteúdo Expandido (Descrição, Imagem e Componente Adicional) */}
+              {expandedServiceId === service.id && (
+                <div
+                  className={`mt-4 w-full ${
+                    index === 0 ? "md:flex items-start gap-4" : ""
+                  }`}
+                >
+                  {/* Container para a IMAGEM (para o primeiro item, aparecerá à esquerda em telas médias e maiores) */}
+                  {service.imageToShow && index === 0 && (
+                    <div className="w-full md:w-1/3 md:max-w-[350px] mb-4 md:mb-0">
+                      <img
+                        src={service.imageToShow}
+                        alt={`Detalhes de ${service.title}`}
+                        className="w-full h-auto object-cover rounded-lg shadow-md"
+                      />
+                    </div>
+                  )}
+
+                  {/* Container para o TEXTO da descrição e o COMPONENTE ADICIONAL */}
+                  <div className="w-full md:w-2/3">
                     <ul className="list-none space-y-2 text-base mb-6">
                       {service.description.map((item, idx) => (
                         <li key={idx}>{item}</li>
                       ))}
                     </ul>
-                    {/* Renderizar a imagem 'img' APENAS SE 'imageToShow' estiver definido para este serviço */}
-                    {service.imageToShow && (
-                      <img
-                        src={service.imageToShow} // Usa a imagem definida em serviceItemsData (que é 'img')
-                        alt={`Detalhes de ${service.title}`}
-                        className="w-full h-auto object-cover rounded-lg shadow-md mt-4
-                                       max-w-[250px] mx-auto md:max-w-[300px] lg:max-w-[350px]"
-                      />
+                    {/* Renderizar o componente adicional ABAIXO do texto */}
+                    {service.additionalContentComponent && index === 0 && (
+                      <div className="mt-4">
+                        {service.additionalContentComponent}
+                      </div>
                     )}
                   </div>
-                )}
-              </div>
-              {/* Passando o estado de rotação e o handler de clique para o Sbms */}
+
+                  {/* Renderizar a IMAGEM para OUTROS SERVIÇOS (abaixo do texto, centralizada) */}
+                  {service.imageToShow && index > 0 && (
+                    <img
+                      src={service.imageToShow}
+                      alt={`Detalhes de ${service.title}`}
+                      className="w-full h-auto object-cover rounded-lg shadow-md mt-4
+                                     max-w-[250px] mx-auto md:max-w-[300px] lg:max-w-[350px]"
+                    />
+                  )}
+                </div>
+              )}
+
+              {/* Componente Sbms para expandir/colapsar */}
               <Sbms
                 href={`#${service.id}`}
-                // showDownloadIcon foi removido, pois não queremos o ícone de download.
-                // Não passamos a prop se ela não for necessária.
                 onClick={(e) => {
                   e.preventDefault();
                   handleToggleExpand(service.id);
