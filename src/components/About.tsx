@@ -3,19 +3,22 @@ import Arrow from "./entctt";
 
 function About() {
   return (
-    <div className="flex flex-col md:flex-row min-h-screen " id="about">
+    <div
+      className="flex flex-col md:flex-row min-h-screen bg-[#F3F3F3]"
+      id="about"
+    >
       {/* Imagem da esquerda */}
       <div className="w-full md:w-3/5 h-screen md:h-auto flex flex-row">
         <img
           src={img1}
           alt="Homem com uniforme laranja em navio"
-          className="relative w-full h-full object-cover left-1/20  z-10 bg-transparent"
+          className="relative w-9/10 h-full object-cover left-1/20  z-10 bg-transparent"
         />
         <div className="absolute w-2/5 h-180 bg-[#500203] top-320 z-0 md:h-270 lg:h-360"></div>
       </div>
 
       {/* Texto da direita */}
-      <div className="w-full md:w-1/2 px-6 py-10 flex flex-col justify-center bg-[#F3F3F3]">
+      <div className="w-full md:w-1/2 px-6 py-10 flex flex-col justify-center ">
         <div className="max-w-xl mx-auto">
           <h2 className="text-blue-500 text-sm uppercase tracking-wide mb-2">
             Quem somos

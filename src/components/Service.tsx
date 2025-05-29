@@ -97,12 +97,12 @@ function Service() {
         </div>
 
         {/* Bloco de Texto Introdutório (Alinhado à direita) */}
-        <div className="w-full flex justify-end mb-16">
-          <div className="w-full max-w-2xl text-center md:text-right">
-            <h3 className="text-white text-sm md:text-base uppercase font-bold mb-2">
+        <div className="w-full flex justify-start">
+          <div className="w-full text-center md:text-left">
+            <h3 className="text-[#43BAFF] text-sm md:text-3xl uppercase font-bold mb-2">
               SERVIÇOS
             </h3>
-            <p className="text-white text-xl md:text-2xl leading-relaxed">
+            <p className="text-white text-3xl md:text-5xl leading-relaxed">
               A Tracti é reconhecida pela sua capacidade de fornecer soluções
               personalizadas e de alto impacto para os desafios mais complexos
               dos mais diversos sectores

@@ -39,6 +39,7 @@ const ContactSection: React.FC = () => {
       >
         {/* Campo de Input - Nome */}
         <input
+          name="name"
           type="text"
           placeholder="Nome"
           className="bg-gray-700 text-white p-4 rounded-md mb-4 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -46,6 +47,7 @@ const ContactSection: React.FC = () => {
 
         {/* Campo de Input - Contato */}
         <input
+          name="email"
           type="text" // Pode ser 'tel' ou 'email' dependendo do que "Contato" significa
           placeholder="Contato"
           className="bg-gray-700 text-white p-4 rounded-md mb-4 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -53,6 +55,7 @@ const ContactSection: React.FC = () => {
 
         {/* Campo de Textarea - Breve descrição */}
         <textarea
+          name="message"
           placeholder="Breve descrição"
           rows={6} // Ajuste o número de linhas para controlar a altura
           className="bg-gray-700 text-white p-4 rounded-md mb-6 placeholder-gray-400 resize-y focus:outline-none focus:ring-2 focus:ring-blue-500"
