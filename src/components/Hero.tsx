@@ -12,7 +12,7 @@ function Hero() {
                   w-full md:w-4/5 lg:w-3/5 xl:w-1/2
                   mx-auto
                   md:ml-[25%]
-                  p-6 md:p-8 lg:p-12
+                  p-10 md:p-12 lg:p-14
                   max-w-screen-xl
                   flex flex-col justify-center"
     >

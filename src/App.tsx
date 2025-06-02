@@ -17,7 +17,7 @@ function App() {
       <img
         src={bck}
         alt=""
-        className="absolute w-screen h-screen z-5 top-600"
+        className="absolute w-screen h-screen z-5 top-300 lg:top-600"
       />
       <Qmsomos />
       <Service />
