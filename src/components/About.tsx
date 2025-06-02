@@ -18,7 +18,7 @@ function About() {
           alt="Homem com uniforme laranja em navio"
           className="relative w-9/10 h-full object-cover left-1/20  z-10 bg-transparent"
         />
-        <div className="absolute w-2/5 h-180 bg-[#500203] top-320 z-0 md:h-270 lg:h-360"></div>
+        <div className="absolute w-2/5 h-180 bg-[#500203] top-160 lg:top-320 z-0 md:h-270 lg:h-360"></div>
       </div>
 
       {/* Texto da direita */}

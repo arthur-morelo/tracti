@@ -112,7 +112,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Conteúdo "EXTRACTING VALUE" */}
-      <div className="absolute bottom-0 left-0 z-10 w-full flex flex-col justify-start items-start pb-[15vh] px-4 md:px-18 lg:px-124">
+      <div className="absolute bottom-0 left-0 z-10 w-full flex flex-col justify-start items-start pb-[15vh] px-8 md:px-18 lg:px-124">
         <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
           {t("header_title")}
         </h1>
