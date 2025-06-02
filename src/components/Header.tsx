@@ -63,7 +63,7 @@ const Header: React.FC = () => {
           <nav
             className={`${
               isMenuOpen ? "flex" : "hidden"
-            } md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 text-white text-sm md:text-base font-semibold absolute md:static top-full left-0 w-full md:w-auto bg-black md:bg-transparent p-5 md:p-0 rounded-b-lg md:rounded-none shadow-lg md:shadow-none`}
+            } md:flex flex-col md:flex-row items-end space-y-4 md:space-y-0 md:space-x-6 text-white text-sm md:text-base font-semibold absolute md:static top-full left-0 w-full md:w-auto bg-transparent md:bg-transparent p-5 md:p-0 rounded-b-lg md:rounded-none shadow-lg md:shadow-none`}
           >
             <a
               href="#about"
